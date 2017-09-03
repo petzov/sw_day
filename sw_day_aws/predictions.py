@@ -20,8 +20,8 @@ def index():
   prediction = predict(json.loads(payload['payload']))
   data = {}
   data['data'] = prediction[-1]
-  return load_encoder().inverse_transform(data['data'])+"\n"
-  # return json.dumps(data)
+  #return load_encoder().inverse_transform(data['data'])+"\n"
+  return json.dumps(data)
 
 def load_encoder():
     dd = joblib.load(LABELS_PATH) 
